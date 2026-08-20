@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoveDeal Brand Kit</title>
+    <link rel="icon" href="svg/movedeal-favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ocean: #0077B6;
+        --tide: #0096C7;
+        --signal: #F77F00;
+        --ink: #1B2430;
+        --paper: #F8F9FA;
+        --white: #FFFFFF;
+        --slate: #5C6670;
+        --mist: #C6CDD2;
+        --night: #0B1218;
+        --line: #D7DEE4;
+        --soft: #E8F4FA;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Outfit, system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--white);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+
+      .topbar {
+        display: flex; align-items: center; justify-content: space-between;
+        max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+      }
+      .topbar-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+      .topbar nav { display: flex; gap: 18px; flex-wrap: wrap; }
+      .topbar nav a {
+        text-decoration: none; font-size: 13px; font-weight: 600; color: var(--slate);
+      }
+      .topbar nav a:hover { color: var(--ocean); }
+
+      .hero {
+        background:
+          radial-gradient(ellipse 80% 60% at 85% 20%, rgba(0,150,199,0.35), transparent 55%),
+          linear-gradient(145deg, #005f92 0%, var(--ocean) 45%, #0a8fc2 100%);
+        color: var(--white);
+        padding: 64px 24px 72px;
+      }
+      .hero-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+      @media (max-width: 860px) {
+        .hero-inner { grid-template-columns: 1fr; }
+      }
+      .eyebrow {
+        display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+        text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 14px;
+      }
+      .hero h1 {
+        margin: 0 0 14px; font-size: clamp(36px, 5vw, 56px); font-weight: 800;
+        letter-spacing: -0.035em; line-height: 1.05;
+      }
+      .hero h1 em {
+        font-family: "Source Serif 4", Georgia, serif; font-style: italic; font-weight: 600;
+        color: #c8ecff;
+      }
+      .hero p { margin: 0; max-width: 42ch; font-size: 17px; color: rgba(255,255,255,0.88); }
+      .hero-card {
+        background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 20px; padding: 36px; backdrop-filter: blur(8px);
+        display: flex; flex-direction: column; align-items: center; gap: 18px;
+      }
+      .hero-card span { font-size: 13px; font-weight: 600; opacity: 0.85; }
+
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 96px; }
+
+      section.block { padding-top: 72px; }
+      section.block h2 {
+        margin: 0 0 8px; font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
+      }
+      section.block .lead { color: var(--slate); max-width: 60ch; margin: 0 0 28px; }
+
+      .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+      @media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+
+      .panel {
+        background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+      }
+      .panel h3 { margin: 0 0 8px; font-size: 16px; }
+      .panel p { margin: 0; color: var(--slate); font-size: 14px; }
+
+      .grid { display: grid; gap: 16px; }
+      .g2 { grid-template-columns: repeat(2, 1fr); }
+      .g3 { grid-template-columns: repeat(3, 1fr); }
+      .g4 { grid-template-columns: repeat(4, 1fr); }
+      @media (max-width: 900px) { .g3, .g4 { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 520px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+
+      .card {
+        border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--white);
+      }
+      .stage {
+        min-height: 160px; display: flex; align-items: center; justify-content: center; padding: 22px;
+      }
+      .meta { padding: 12px 14px 14px; border-top: 1px solid var(--line); }
+      .meta h3 { margin: 0 0 4px; font-size: 13px; font-weight: 700; }
+      .meta p { margin: 0; font-size: 12px; color: var(--slate); }
+
+      .bg-soft { background: var(--soft); }
+      .bg-paper { background: var(--paper); }
+      .bg-night { background: var(--night); }
+      .bg-ocean { background: var(--ocean); }
+      .bg-signal { background: var(--signal); }
+
+      .dl { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .dl a {
+        text-decoration: none; font-size: 11px; font-weight: 700;
+        padding: 5px 10px; border-radius: 8px; border: 1px solid var(--ink);
+      }
+      .dl a.svg { color: var(--ink); }
+      .dl a.svg:hover { background: var(--ink); color: var(--white); }
+      .dl a.png { color: var(--ocean); border-color: var(--ocean); }
+      .dl a.png:hover { background: var(--ocean); color: var(--white); }
+      .dl a.main { background: var(--ocean); color: var(--white); border-color: var(--ocean); }
+      .dl a.main:hover { background: var(--ink); border-color: var(--ink); }
+
+      .swatch { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+      .swatch .chip { height: 88px; }
+      .swatch .info { padding: 12px 14px; }
+      .swatch .info strong { display: block; font-size: 14px; }
+      .swatch .info code { font-size: 12px; color: var(--slate); }
+
+      .rules { list-style: none; margin: 0; padding: 0; }
+      .rules li {
+        padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px;
+        padding-left: 28px; position: relative;
+      }
+      .rules li:last-child { border-bottom: 0; }
+      .rules.do li::before { content: "✓"; position: absolute; left: 0; color: var(--ocean); font-weight: 800; }
+      .rules.dont li::before { content: "✕"; position: absolute; left: 0; color: var(--signal); font-weight: 800; }
+
+      .lockup { display: flex; align-items: center; gap: 14px; }
+      .word {
+        font-weight: 800; font-size: 28px; letter-spacing: -0.03em; color: var(--ink);
+      }
+      .word.on-dark { color: var(--white); }
+
+      .scale {
+        display: flex; align-items: flex-end; gap: 36px; flex-wrap: wrap;
+        padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper);
+      }
+      .scale figure { margin: 0; text-align: center; }
+      .scale figcaption { margin-top: 8px; font-size: 12px; color: var(--slate); }
+
+      table { width: 100%; max-width: 720px; border-collapse: collapse; font-size: 14px; }
+      th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
+      th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); }
+
+      .type-sample {
+        border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--paper);
+      }
+      .type-sample .big { font-size: 42px; font-weight: 800; letter-spacing: -0.035em; margin: 0 0 8px; }
+      .type-sample .serif {
+        font-family: "Source Serif 4", Georgia, serif; font-style: italic; font-size: 22px; color: var(--ocean); margin: 0 0 12px;
+      }
+      .type-sample .body { margin: 0; color: var(--slate); max-width: 52ch; }
+
+      footer.site {
+        border-top: 1px solid var(--line); padding: 28px 24px 48px; color: var(--slate); font-size: 13px;
+      }
+      footer.site .inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-brand">
+        <img src="svg/movedeal-mark-color.svg" width="36" height="36" alt="" />
+        MoveDeal Brand Kit
+      </div>
+      <nav>
+        <a href="#logo">Logo</a>
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#lockups">Lockups</a>
+        <a href="#social">Social</a>
+        <a href="#usage">Usage</a>
+        <a href="#files">Files</a>
+      </nav>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Brand kit · v1.0 · August 2026</div>
+          <h1>MoveDeal<br /><em>Smart moves. Fair deals.</em></h1>
+          <p>
+            Official identity for Europe’s moving marketplace. The truck mark carries AI-led estimates
+            and a greener move — one symbol for customers, movers, and the product UI on movedeal.app.
+          </p>
+        </div>
+        <div class="hero-card">
+          <img src="svg/movedeal-mark-on-ocean.svg" width="168" height="168" alt="MoveDeal logo" />
+          <span>Official product mark</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <section class="block" id="logo">
+        <h2>The mark</h2>
+        <p class="lead">
+          A delivery truck in Ocean blue. Inside the cargo: an AI chip (intelligent quotes) and a leaf
+          (responsible moving). This is the only official symbol — do not invent alternate geometries.
+        </p>
+        <div class="split">
+          <div class="panel">
+            <h3>What it stands for</h3>
+            <p>
+              MoveDeal connects people who need to move with verified movers. The mark reads at a glance:
+              logistics (truck), intelligence (AI), and care for the journey (leaf).
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Clear space</h3>
+            <p>
+              Keep empty space around the mark equal to the height of the truck cab (~18% of the mark height)
+              on all sides. Never crop wheels, the ground line, the chip, or the leaf.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid g4" style="margin-top: 24px">
+          <div class="card">
+            <div class="stage bg-soft"><img src="svg/movedeal-mark-color.svg" width="88" height="88" alt="" /></div>
+            <div class="meta">
+              <h3>Color</h3>
+              <p>Default on light UI</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-mark-color.svg" download>SVG</a>
+                <a class="png" href="png/movedeal-mark-color-512.png" download>PNG 512</a>
+                <a class="png" href="png/movedeal-mark-color-1024.png" download>PNG 1024</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage bg-paper"><img src="svg/movedeal-mark-mono.svg" width="88" height="88" alt="" /></div>
+            <div class="meta">
+              <h3>Mono</h3>
+              <p>Print / single ink</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-mark-mono.svg" download>SVG</a>
+                <a class="png" href="png/movedeal-mark-mono-512.png" download>PNG 512</a>
+                <a class="png" href="png/movedeal-mark-mono-1024.png" download>PNG 1024</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage bg-night"><img src="svg/movedeal-mark-reversed.svg" width="88" height="88" alt="" /></div>
+            <div class="meta">
+              <h3>Reversed</h3>
+              <p>Dark backgrounds</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-mark-reversed.svg" download>SVG</a>
+                <a class="png" href="png/movedeal-mark-reversed-512.png" download>PNG 512</a>
+                <a class="png" href="png/movedeal-mark-reversed-1024.png" download>PNG 1024</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage bg-ocean"><img src="svg/movedeal-mark-on-ocean.svg" width="88" height="88" alt="" /></div>
+            <div class="meta">
+              <h3>On Ocean</h3>
+              <p>Brand-color fields</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-mark-on-ocean.svg" download>SVG</a>
+                <a class="png" href="png/movedeal-mark-on-ocean-512.png" download>PNG 512</a>
+                <a class="png" href="png/movedeal-mark-on-ocean-1024.png" download>PNG 1024</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="lead" style="margin-top: 16px">
+          Pure black
+          <a href="svg/movedeal-mark-black.svg" download>SVG</a> /
+          <a href="png/movedeal-mark-black-512.png" download>PNG</a>
+          · Pure white
+          <a href="svg/movedeal-mark-white.svg" download>SVG</a> /
+          <a href="png/movedeal-mark-white-512.png" download>PNG</a>
+        </p>
+      </section>
+
+      <section class="block" id="color">
+        <h2>Color</h2>
+        <p class="lead">
+          Ocean owns the brand. Tide softens digital surfaces. Signal is earned attention only (CTAs, alerts) —
+          never body text. Ink carries structure.
+        </p>
+        <div class="grid g4">
+          <div class="swatch"><div class="chip" style="background:var(--ocean)"></div><div class="info"><strong>Ocean</strong><code>#0077B6 · primary</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--tide)"></div><div class="info"><strong>Tide</strong><code>#0096C7 · secondary</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--signal)"></div><div class="info"><strong>Signal</strong><code>#F77F00 · accent</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="info"><strong>Ink</strong><code>#1B2430 · text</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--paper); border-bottom:1px solid var(--line)"></div><div class="info"><strong>Paper</strong><code>#F8F9FA · surfaces</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--slate)"></div><div class="info"><strong>Slate</strong><code>#5C6670 · secondary text</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--mist)"></div><div class="info"><strong>Mist</strong><code>#C6CDD2 · borders</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--night)"></div><div class="info"><strong>Night</strong><code>#0B1218 · dark UI</code></div></div>
+        </div>
+      </section>
+
+      <section class="block" id="type">
+        <h2>Typography</h2>
+        <p class="lead">
+          Product UI and brand pages use <strong>Outfit</strong>. Optional display accent:
+          <strong>Source Serif 4</strong> italic for short taglines only — never in forms or dense UI.
+        </p>
+        <div class="type-sample">
+          <p class="big">MoveDeal</p>
+          <p class="serif">Smart moves. Fair deals.</p>
+          <p class="body">Compare verified movers, get AI-assisted estimates, and book with transparent pricing across Europe.</p>
+        </div>
+      </section>
+
+      <section class="block" id="lockups">
+        <h2>Lockups</h2>
+        <p class="lead">Wordmark is always “MoveDeal” (one word, capital M and D). Pair with the truck mark — never replace the mark with a generic icon.</p>
+        <div class="grid g3">
+          <div class="card">
+            <div class="stage bg-soft">
+              <div class="lockup">
+                <img src="svg/movedeal-mark-color.svg" width="56" height="56" alt="" />
+                <span class="word">MoveDeal</span>
+              </div>
+            </div>
+            <div class="meta">
+              <h3>Horizontal</h3>
+              <p>Headers, email, docs</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-lockup-horizontal-light.svg" download>SVG light</a>
+                <a class="svg" href="svg/movedeal-lockup-horizontal-dark.svg" download>SVG dark</a>
+                <a class="png" href="png/movedeal-lockup-horizontal-light-512.png" download>PNG</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage bg-soft" style="flex-direction:column; gap:10px">
+              <img src="svg/movedeal-mark-color.svg" width="64" height="64" alt="" />
+              <span class="word" style="font-size:20px">MoveDeal</span>
+            </div>
+            <div class="meta">
+              <h3>Stacked</h3>
+              <p>Splash, square ads</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-lockup-stacked-light.svg" download>SVG light</a>
+                <a class="png" href="png/movedeal-lockup-stacked-light-1024.png" download>PNG 1024</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage bg-soft">
+              <img src="svg/movedeal-mark-color.svg" width="72" height="72" alt="" />
+            </div>
+            <div class="meta">
+              <h3>Symbol only</h3>
+              <p>Favicon, app tile, merch</p>
+              <div class="dl">
+                <a class="svg" href="svg/movedeal-favicon.svg" download>Favicon SVG</a>
+                <a class="png" href="png/movedeal-lockup-symbol-transparent-1024.png" download>PNG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="social">
+        <h2>Social &amp; profiles</h2>
+        <p class="lead">Square assets for LinkedIn, Instagram, X, Facebook, WhatsApp. Prefer 1024×1024.</p>
+        <div class="grid g4">
+          <div class="card">
+            <div class="stage" style="padding:0;min-height:0"><img src="png/movedeal-app-icon-512.png" alt="App icon" width="100%" style="display:block" /></div>
+            <div class="meta">
+              <h3>App icon</h3>
+              <p>Recommended default</p>
+              <div class="dl">
+                <a class="main" href="png/movedeal-app-icon-1024.png" download>PNG 1024</a>
+                <a class="png" href="png/movedeal-app-icon-512.png" download>512</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage" style="padding:0;min-height:0"><img src="png/movedeal-profile-light-512.png" alt="" width="100%" style="display:block" /></div>
+            <div class="meta">
+              <h3>Profile · light</h3>
+              <div class="dl"><a class="main" href="png/movedeal-profile-light-1024.png" download>PNG 1024</a></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage" style="padding:0;min-height:0"><img src="png/movedeal-profile-dark-512.png" alt="" width="100%" style="display:block" /></div>
+            <div class="meta">
+              <h3>Profile · dark</h3>
+              <div class="dl"><a class="main" href="png/movedeal-profile-dark-1024.png" download>PNG 1024</a></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="stage" style="padding:0;min-height:0"><img src="png/movedeal-profile-ocean-512.png" alt="" width="100%" style="display:block" /></div>
+            <div class="meta">
+              <h3>Profile · ocean</h3>
+              <div class="dl"><a class="main" href="png/movedeal-profile-ocean-1024.png" download>PNG 1024</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="usage">
+        <h2>Usage</h2>
+        <div class="split">
+          <div>
+            <h3 style="margin:0 0 8px">Do</h3>
+            <ul class="rules do">
+              <li>Use Ocean truck on Paper / white digital surfaces</li>
+              <li>Use reversed or on-ocean marks on dark and Ocean fields</li>
+              <li>Keep proportions locked — scale uniformly</li>
+              <li>Use Signal only for CTAs and sparse accents</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px">Don’t</h3>
+            <ul class="rules dont">
+              <li>Don’t stretch, rotate, or add shadows / gradients to the mark</li>
+              <li>Don’t recolor the truck outside approved variants</li>
+              <li>Don’t remove the AI chip or leaf</li>
+              <li>Don’t place low-contrast blue on blue photography without a panel</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin: 32px 0 12px">Minimum sizes</h3>
+        <table>
+          <thead><tr><th>Asset</th><th>Digital</th><th>Print</th></tr></thead>
+          <tbody>
+            <tr><td>Symbol</td><td>24 px</td><td>8 mm</td></tr>
+            <tr><td>Horizontal lockup</td><td>120 px wide</td><td>30 mm</td></tr>
+            <tr><td>App icon</td><td>32 px</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <div class="scale" style="margin-top: 24px">
+          <figure><img src="svg/movedeal-mark-color.svg" width="96" height="96" alt="" /><figcaption>96</figcaption></figure>
+          <figure><img src="svg/movedeal-mark-color.svg" width="64" height="64" alt="" /><figcaption>64</figcaption></figure>
+          <figure><img src="svg/movedeal-mark-color.svg" width="32" height="32" alt="" /><figcaption>32</figcaption></figure>
+          <figure><img src="svg/movedeal-mark-color.svg" width="24" height="24" alt="" /><figcaption>24</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="block" id="files">
+        <h2>File naming</h2>
+        <p class="lead">Convention: <code>movedeal-[asset]-[variant].[format]</code></p>
+        <table>
+          <thead><tr><th>Pattern</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><code>svg/movedeal-mark-*.svg</code></td><td>Vector masters</td></tr>
+            <tr><td><code>png/movedeal-mark-*-512.png</code> / <code>-1024.png</code></td><td>Transparent rasters</td></tr>
+            <tr><td><code>png/movedeal-app-icon-1024.png</code></td><td>Social / app tile</td></tr>
+            <tr><td><code>png/movedeal-profile-*-1024.png</code></td><td>Profile photos</td></tr>
+            <tr><td><code>svg/movedeal-lockup-horizontal-*.svg</code></td><td>Header lockups</td></tr>
+            <tr><td><code>svg/movedeal-favicon.svg</code></td><td>Browser favicon</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <footer class="site">
+      <div class="inner">
+        <span>© MoveDeal · Brand kit for movedeal.app</span>
+        <span>Colors match product Tailwind tokens (Ocean / Tide / Signal)</span>
+      </div>
+    </footer>
+  </body>
+</html>

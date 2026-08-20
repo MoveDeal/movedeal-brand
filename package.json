@@ -1,0 +1,11 @@
+{
+  "name": "movedeal-brand",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-assets.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}
