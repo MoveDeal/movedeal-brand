@@ -1,2 +1,10 @@
 node_modules/
 package-lock.json
+assets-src/compare-*
+assets-src/logo-mask*
+assets-src/logo-nearest*
+assets-src/*.path
+assets-src/*.svgpath.txt
+assets-src/movedeal-logo-next-256.png
+assets-src/movedeal-logo-source-512.png
+
