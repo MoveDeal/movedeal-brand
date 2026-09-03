@@ -13,6 +13,16 @@
   "bugs": {
     "url": "https://github.com/MoveDeal/movedeal-brand/issues"
   },
+  "keywords": [
+    "movedeal",
+    "brand",
+    "logo",
+    "design-system",
+    "assets"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-assets.mjs"
