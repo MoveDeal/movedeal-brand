@@ -1,6 +1,18 @@
 {
   "name": "movedeal-brand",
+  "version": "1.0.0",
   "private": true,
+  "description": "MoveDeal official brand kit — logos, wordmarks, favicons, colors, and asset generators.",
+  "license": "MIT",
+  "author": "MoveDeal",
+  "homepage": "https://github.com/MoveDeal/movedeal-brand",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoveDeal/movedeal-brand.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MoveDeal/movedeal-brand/issues"
+  },
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-assets.mjs"

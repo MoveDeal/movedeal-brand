@@ -1,12 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img">
-  <title>MoveDeal favicon</title>
-  
-  <g><path fill="#0077B6" fill-rule="evenodd" d="M35 22H89A6 6 0 0 1 95 28V60.5A6 6 0 0 1 89 66.5H35A6 6 0 0 1 29 60.5V28A6 6 0 0 1 35 22ZM35 26H89A2 2 0 0 1 91 28V60.5A2 2 0 0 1 89 62.5H35A2 2 0 0 1 33 60.5V28A2 2 0 0 1 35 26Z"/>
-  <g fill="none" stroke="#0077B6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M31 33.1H16.2L4.6 47.3V64.6H16.5"/>
-    <path d="M7 47.3H23.2"/>
-  </g>
-  <path fill="#0077B6" d="M8 77L88 77A2 2 0 0 1 88 73L8 73A2 2 0 0 1 8 77Z"/>
-  <path fill="#0077B6" fill-rule="evenodd" d="M10.9 66.7A8.6 8.6 0 1 1 28.1 66.7A8.6 8.6 0 1 1 10.9 66.7ZM14.9 66.7A4.6 4.6 0 1 1 24.1 66.7A4.6 4.6 0 1 1 14.9 66.7Z"/>
-  <path fill="#0077B6" fill-rule="evenodd" d="M66.9 66.7A8.6 8.6 0 1 1 84.1 66.7A8.6 8.6 0 1 1 66.9 66.7ZM70.9 66.7A4.6 4.6 0 1 1 80.1 66.7A4.6 4.6 0 1 1 70.9 66.7Z"/></g>
+  <title>MoveDeal</title><g transform="translate(-8.4 11.2) scale(0.3)">
+  <path fill="#5B4BFF" d="M36 36 L36 166 A22 22 0 0 0 58 188 L107 188 A29.5 29.5 0 0 1 104 163 L61 163 L59 70 L120 128 L186 61 L236 61 A52.36 52.36 0 0 1 237 163 L179 163 L179 188 L233 188 L243 187 A77.81 77.81 0 0 0 252 39 L239 36 L175 36 L119 91 L64 36 Z"/>
+  <path fill="#5B4BFF" d="M211 92 L191 92 L141 144 L151 149 L159 161 L211 108 Z"/>
+  <circle cx="132.72" cy="169.85" r="18.35" fill="#19D3FF"/></g>
 </svg>

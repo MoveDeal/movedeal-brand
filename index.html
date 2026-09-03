@@ -10,17 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --ocean: #0077B6;
-        --tide: #0096C7;
-        --signal: #F77F00;
-        --ink: #1B2430;
+        --brand: #5B4BFF;
+        --cyan: #19D3FF;
+        --ocean: #5B4BFF; /* alias → brand violet */
+        --tide: #7D6FFF;
+        --signal: #19D3FF; /* accent cyan */
+        --ink: #0A0F14;
         --paper: #F8F9FA;
         --white: #FFFFFF;
         --slate: #5C6670;
         --mist: #C6CDD2;
-        --night: #0B1218;
+        --night: #0A0F14;
         --line: #D7DEE4;
-        --soft: #E8F4FA;
+        --soft: #F2F0FF;
       }
 
       * { box-sizing: border-box; }
@@ -48,8 +50,8 @@
 
       .hero {
         background:
-          radial-gradient(ellipse 80% 60% at 85% 20%, rgba(0,150,199,0.35), transparent 55%),
-          linear-gradient(145deg, #005f92 0%, var(--ocean) 45%, #0a8fc2 100%);
+          radial-gradient(ellipse 80% 60% at 85% 20%, rgba(25,211,255,0.28), transparent 55%),
+          linear-gradient(145deg, #3a2cc0 0%, var(--brand) 45%, #7d6fff 100%);
         color: var(--white);
         padding: 64px 24px 72px;
       }
@@ -196,15 +198,16 @@
     <header class="hero">
       <div class="hero-inner">
         <div>
-          <div class="eyebrow">Brand kit · v1.1 · August 2026</div>
+          <div class="eyebrow">Brand kit · v2 · MD monogram</div>
           <h1>MoveDeal<br /><em>Smart moves. Fair deals.</em></h1>
           <p>
-            Official identity for Europe’s moving marketplace. Vector masters match the live
-            mark on movedeal.app — a left-facing truck, AI chip, and leaf in Ocean blue.
+            Official identity for Europe’s moving marketplace. The mark is a geometric
+            <strong>MD</strong> monogram in Brand violet <code>#5B4BFF</code> with a cyan accent
+            <code>#19D3FF</code> — paired with the MoveDeal wordmark.
           </p>
         </div>
         <div class="hero-card">
-          <img src="svg/movedeal-mark-on-ocean.svg" width="168" height="168" alt="MoveDeal logo" />
+          <img src="svg/movedeal-app-icon.svg" width="168" height="168" alt="MoveDeal logo" />
           <span>Official product mark</span>
         </div>
       </div>
@@ -214,23 +217,23 @@
       <section class="block" id="logo">
         <h2>The mark</h2>
         <p class="lead">
-          A left-facing moving van in Ocean <code>#0077B6</code>. Cargo carries an AI chip
-          (intelligent quotes) and a leaf (responsible moving). Geometry is traced from the
-          live 100×100 product file and shipped as fill-based SVG — no live type, no strokes.
+          A geometric <strong>MD</strong> monogram in Brand <code>#5B4BFF</code> with a cyan
+          anchor <code>#19D3FF</code>. Filled paths (M + open D + arrow) mapped from the brand
+          sheet. Shipped as SVG with outlined Inter Bold wordmark — no live type.
         </p>
         <div class="split">
           <div class="panel">
             <h3>What it stands for</h3>
             <p>
-              MoveDeal connects people who need to move with verified movers. The mark reads at a glance:
-              logistics (truck), intelligence (AI), and care for the journey (leaf).
+              MoveDeal connects people who need to move with verified movers. The monogram is
+              compact for app icons and favicons; the lockup carries the full MoveDeal name.
             </p>
           </div>
           <div class="panel">
             <h3>Clear space</h3>
             <p>
-              Keep empty space around the mark equal to the cab height (~18% of the mark height)
-              on all sides. Never crop wheels, the ground line, the chip, or the leaf.
+              Keep empty space around the mark equal to the stroke width (~11% of mark height)
+              on all sides. Never crop the cyan accent dot or the diagonal uplift.
             </p>
           </div>
         </div>
@@ -275,7 +278,7 @@
           <div class="card">
             <div class="stage bg-ocean"><img src="svg/movedeal-mark-on-ocean.svg" width="88" height="88" alt="" /></div>
             <div class="meta">
-              <h3>On Ocean</h3>
+              <h3>On Brand</h3>
               <p>Brand-color fields</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-mark-on-ocean.svg" download>SVG</a>
@@ -298,18 +301,16 @@
       <section class="block" id="color">
         <h2>Color</h2>
         <p class="lead">
-          Ocean owns the brand. Tide softens digital surfaces. Signal is earned attention only (CTAs, alerts) —
-          never body text. Ink carries structure.
+          Brand owns the violet primary. Cyan is the technology accent (dot, motion, focus).
+          Ink <code>#0A0F14</code> is the wordmark on light surfaces; white on dark.
         </p>
-        <div class="grid g4">
-          <div class="swatch"><div class="chip" style="background:var(--ocean)"></div><div class="info"><strong>Ocean</strong><code>#0077B6 · primary</code></div></div>
-          <div class="swatch"><div class="chip" style="background:var(--tide)"></div><div class="info"><strong>Tide</strong><code>#0096C7 · secondary</code></div></div>
-          <div class="swatch"><div class="chip" style="background:var(--signal)"></div><div class="info"><strong>Signal</strong><code>#F77F00 · accent</code></div></div>
-          <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="info"><strong>Ink</strong><code>#1B2430 · text</code></div></div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:var(--brand)"></div><div class="info"><strong>Brand</strong><code>#5B4BFF · primary</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--cyan)"></div><div class="info"><strong>Cyan</strong><code>#19D3FF · accent</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="info"><strong>Ink</strong><code>#0A0F14 · text / dark</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--white); border:1px solid var(--line)"></div><div class="info"><strong>White</strong><code>#FFFFFF · light surfaces</code></div></div>
           <div class="swatch"><div class="chip" style="background:var(--paper); border-bottom:1px solid var(--line)"></div><div class="info"><strong>Paper</strong><code>#F8F9FA · surfaces</code></div></div>
           <div class="swatch"><div class="chip" style="background:var(--slate)"></div><div class="info"><strong>Slate</strong><code>#5C6670 · secondary text</code></div></div>
-          <div class="swatch"><div class="chip" style="background:var(--mist)"></div><div class="info"><strong>Mist</strong><code>#C6CDD2 · borders</code></div></div>
-          <div class="swatch"><div class="chip" style="background:var(--night)"></div><div class="info"><strong>Night</strong><code>#0B1218 · dark UI</code></div></div>
         </div>
       </section>
 
@@ -322,7 +323,7 @@
         </p>
         <div class="type-sample">
           <p class="big">MoveDeal</p>
-          <p class="serif">Inter Bold · 24px wordmark · Ocean #0077B6</p>
+          <p class="serif">Inter Bold · 24px wordmark · Ink #0A0F14</p>
           <p class="body">Compare verified movers, get AI-assisted estimates, and book with transparent pricing across Europe.</p>
         </div>
       </section>
@@ -330,7 +331,7 @@
       <section class="block" id="lockups">
         <h2>Lockups</h2>
         <p class="lead">
-          Wordmark is always “MoveDeal” (one word, capital M and D), Inter Bold, Ocean.
+          Wordmark is always “MoveDeal” (one word, capital M and D), Inter Bold, Ink on light / White on dark.
           Product header rhythm: <strong>32px mark · 8px gap · 24px type</strong> (0.45× cap height).
         </p>
         <div class="grid g3">
@@ -423,18 +424,18 @@
           <div>
             <h3 style="margin:0 0 8px">Do</h3>
             <ul class="rules do">
-              <li>Use Ocean truck on Paper / white digital surfaces</li>
-              <li>Use reversed or on-ocean marks on dark and Ocean fields</li>
+              <li>Use color MD mark on Paper / white digital surfaces</li>
+              <li>Use white-mark / dark lockup on dark and Brand fields</li>
               <li>Keep proportions locked — scale uniformly</li>
               <li>Use the simplified favicon below 24px (chip letters will not hold)</li>
-              <li>Use Signal only for CTAs and sparse accents</li>
+              <li>Use Cyan only for accents, motion, and focus — not body text</li>
             </ul>
           </div>
           <div>
             <h3 style="margin:0 0 8px">Don’t</h3>
             <ul class="rules dont">
               <li>Don’t stretch, rotate, or add shadows / gradients to the mark</li>
-              <li>Don’t recolor the truck outside approved variants</li>
+              <li>Don’t recolor the monogram outside approved variants</li>
               <li>Don’t remove the AI chip or leaf from the primary mark</li>
               <li>Don’t ship live HTML/SVG text for the wordmark — use the outlined files</li>
               <li>Don’t place low-contrast blue on blue photography without a panel</li>
@@ -469,7 +470,7 @@
             <tr><td><code>svg/movedeal-mark-*.svg</code></td><td>Vector masters (fill-based)</td></tr>
             <tr><td><code>svg/movedeal-lockup-horizontal-*.svg</code></td><td>Header lockups (32 / 8 / 24)</td></tr>
             <tr><td><code>svg/movedeal-wordmark-*.svg</code></td><td>Outlined Inter Bold wordmark</td></tr>
-            <tr><td><code>svg/movedeal-favicon.svg</code></td><td>Simplified van, no chip type</td></tr>
+            <tr><td><code>svg/movedeal-favicon.svg</code></td><td>MD monogram, color</td></tr>
             <tr><td><code>png/movedeal-mark-*-512.png</code> / <code>-1024.png</code></td><td>Transparent rasters</td></tr>
             <tr><td><code>png/movedeal-app-icon-1024.png</code></td><td>Social / app tile</td></tr>
             <tr><td><code>png/movedeal-profile-*-1024.png</code></td><td>Profile photos</td></tr>
@@ -481,7 +482,7 @@
     <footer class="site">
       <div class="inner">
         <span>© MoveDeal · Brand kit for movedeal.app</span>
-        <span>Colors match product Tailwind tokens (Ocean / Tide / Signal) · Type is Inter Bold</span>
+        <span>Colors match product Tailwind tokens (Brand / Cyan / Ink) · Type is Inter Bold</span>
       </div>
     </footer>
   </body>
