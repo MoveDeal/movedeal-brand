@@ -24,6 +24,8 @@ Open `index.html` in a browser, or serve the folder:
 npx serve .
 ```
 
+Language: **EN / DE** toggle in the top bar (`?lang=de` or `?lang=en`). About MoveDeal + official social links are on the page.
+
 ## Regenerate assets
 
 ```bash
