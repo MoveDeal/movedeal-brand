@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://movedeal.github.io/movedeal-brand/sitemap.xml
