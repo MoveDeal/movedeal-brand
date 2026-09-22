@@ -40,4 +40,15 @@ node scripts/generate-assets.mjs
 
 ## GitHub Pages
 
-Intended host: `https://movedeal.github.io/movedeal-brand/` (MoveDeal org).
+**Live site:** https://movedeal.github.io/movedeal-brand/
+
+Intended host: `https://movedeal.github.io/movedeal-brand/` (MoveDeal org). Pages builds from `main` (site root).
+
+### Discovery / SEO
+
+- On-page meta, Open Graph, JSON-LD, `robots.txt`, and `sitemap.xml` ship with the kit.
+- Google may take days–weeks to show the page for brand queries; help it with:
+  1. [Google Search Console](https://search.google.com/search-console) → add URL prefix `https://movedeal.github.io/movedeal-brand/` (or the `movedeal.github.io` property)
+  2. Submit `https://movedeal.github.io/movedeal-brand/sitemap.xml`
+  3. URL Inspection → **Request indexing** for the homepage
+- A link from [movedeal.app](https://movedeal.app/) (footer) also helps crawlers find the kit.
