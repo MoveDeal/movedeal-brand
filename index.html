@@ -19,6 +19,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MoveDeal Brand Kit" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:url" content="https://movedeal.github.io/movedeal-brand/" />
     <meta property="og:title" content="MoveDeal Brand Kit — Logo, Colors &amp; Assets" />
     <meta
@@ -39,7 +40,8 @@
     <meta name="twitter:image" content="https://movedeal.github.io/movedeal-brand/png/movedeal-app-icon-1024.png" />
 
     <link rel="icon" href="svg/movedeal-favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href="https://movedeal.github.io/movedeal-brand/" />
+    <link rel="alternate" hreflang="en" href="https://movedeal.github.io/movedeal-brand/?lang=en" />
+    <link rel="alternate" hreflang="de" href="https://movedeal.github.io/movedeal-brand/?lang=de" />
     <link rel="alternate" hreflang="x-default" href="https://movedeal.github.io/movedeal-brand/" />
 
     <script type="application/ld+json">
@@ -77,7 +79,11 @@
             "sameAs": [
               "https://github.com/MoveDeal/movedeal-brand",
               "https://movedeal.github.io/movedeal-brand/",
-              "https://x.com/movedeal_app"
+              "https://movedeal.app/",
+              "https://x.com/movedeal_app",
+              "https://www.instagram.com/movedeal_app",
+              "https://www.linkedin.com/company/movedeal",
+              "https://www.reddit.com/user/movedeal-admin"
             ]
           }
         ]
@@ -125,6 +131,16 @@
         text-decoration: none; font-size: 13px; font-weight: 600; color: var(--slate);
       }
       .topbar nav a:hover { color: var(--ocean); }
+      .topbar-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+      .lang-switch {
+        display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden;
+        background: var(--paper);
+      }
+      .lang-switch button {
+        border: 0; background: transparent; font: inherit; font-size: 12px; font-weight: 700;
+        padding: 6px 12px; cursor: pointer; color: var(--slate);
+      }
+      .lang-switch button.is-active { background: var(--ink); color: var(--white); }
 
       .hero {
         background:
@@ -254,64 +270,145 @@
         border-top: 1px solid var(--line); padding: 28px 24px 48px; color: var(--slate); font-size: 13px;
       }
       footer.site .inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+      .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      @media (max-width: 800px) { .social-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 480px) { .social-grid { grid-template-columns: 1fr; } }
+      a.social-card {
+        display: block; text-decoration: none; border: 1px solid var(--line); border-radius: 14px;
+        padding: 18px 16px; background: var(--white); transition: border-color .15s, box-shadow .15s;
+      }
+      a.social-card:hover { border-color: var(--brand); box-shadow: 0 8px 24px rgba(91,75,255,.08); }
+      a.social-card strong { display: block; font-size: 14px; margin-bottom: 4px; }
+      a.social-card span { font-size: 12px; color: var(--slate); }
+      .cta {
+        display: inline-flex; margin-top: 8px; padding: 10px 16px; border-radius: 10px;
+        background: var(--brand); color: var(--white); font-weight: 700; font-size: 13px; text-decoration: none;
+      }
+      .cta:hover { background: var(--ink); }
     </style>
   </head>
   <body>
     <div class="topbar">
       <div class="topbar-brand">
         <img src="svg/movedeal-mark-color.svg" width="36" height="36" alt="" />
-        MoveDeal Brand Kit
+        <span data-i18n="brandTitle">MoveDeal Brand Kit</span>
       </div>
-      <nav>
-        <a href="#logo">Logo</a>
-        <a href="#color">Color</a>
-        <a href="#type">Type</a>
-        <a href="#lockups">Lockups</a>
-        <a href="#social">Social</a>
-        <a href="#usage">Usage</a>
-        <a href="#files">Files</a>
-      </nav>
+      <div class="topbar-actions">
+        <nav>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#channels" data-i18n="navChannels">Social</a>
+          <a href="#logo" data-i18n="navLogo">Logo</a>
+          <a href="#color" data-i18n="navColor">Color</a>
+          <a href="#type" data-i18n="navType">Type</a>
+          <a href="#lockups" data-i18n="navLockups">Lockups</a>
+          <a href="#social" data-i18n="navAssets">Assets</a>
+          <a href="#usage" data-i18n="navUsage">Usage</a>
+          <a href="#files" data-i18n="navFiles">Files</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang-btn="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
     </div>
 
     <header class="hero">
       <div class="hero-inner">
         <div>
-          <div class="eyebrow">Official brand kit · GitHub Pages · movedeal.app</div>
-          <h1>MoveDeal Brand Kit<br /><em>Smart moves. Fair deals.</em></h1>
-          <p>
-            Official MoveDeal logo and brand assets (GitHub Pages). The mark is a geometric
-            <strong>MD</strong> monogram in Brand violet <code>#5B4BFF</code> with a cyan accent
-            <code>#19D3FF</code> — paired with the MoveDeal wordmark. Download SVG and PNG files below.
+          <div class="eyebrow" data-i18n="eyebrow">Official brand kit · GitHub Pages · Soft Launch Munich</div>
+          <h1><span data-i18n="heroTitle">MoveDeal Brand Kit</span><br /><em data-i18n="heroTagline">Smart moves. Fair deals.</em></h1>
+          <p data-i18n="heroLead">
+            Official MoveDeal logo and brand assets. Geometric MD monogram in Brand violet #5B4BFF with cyan accent #19D3FF — plus the MoveDeal wordmark. Download SVG and PNG below.
           </p>
         </div>
         <div class="hero-card">
           <img src="svg/movedeal-app-icon.svg" width="168" height="168" alt="MoveDeal logo" />
-          <span>Official product mark</span>
+          <span data-i18n="heroCard">Official product mark</span>
         </div>
       </div>
     </header>
 
     <div class="wrap">
-      <section class="block" id="logo">
-        <h2>The mark</h2>
-        <p class="lead">
-          A geometric <strong>MD</strong> monogram in Brand <code>#5B4BFF</code> with a cyan
-          anchor <code>#19D3FF</code>. Filled paths (M + open D + arrow) mapped from the brand
-          sheet. Shipped as SVG with outlined Inter Bold wordmark — no live type.
+      <section class="block" id="about">
+        <h2 data-i18n="aboutTitle">What is MoveDeal?</h2>
+        <p class="lead" data-i18n="aboutLead">
+          MoveDeal is a moving marketplace. Customers describe a move once, receive offers from verified moving companies, and choose who to book — starting with Soft Launch Munich.
         </p>
-        <div class="split">
+        <div class="grid g3">
           <div class="panel">
-            <h3>What it stands for</h3>
-            <p>
-              MoveDeal connects people who need to move with verified movers. The monogram is
-              compact for app icons and favicons; the lockup carries the full MoveDeal name.
+            <h3 data-i18n="aboutP1Title">For people who move</h3>
+            <p data-i18n="aboutP1">
+              Post a move request (home move or pickup of individual items), compare offers, and stay in control of the booking. Transparent marketplace — not invented traction or fake reviews.
             </p>
           </div>
           <div class="panel">
-            <h3>Clear space</h3>
-            <p>
-              Keep empty space around the mark equal to the stroke width (~11% of mark height)
-              on all sides. Never crop the cyan accent dot or the diagonal uplift.
+            <h3 data-i18n="aboutP2Title">For moving companies</h3>
+            <p data-i18n="aboutP2">
+              Verified partners bid on real requests. Soft-launch honesty: Munich first. No escrow claims on the public brand.
+            </p>
+          </div>
+          <div class="panel">
+            <h3 data-i18n="aboutP3Title">Product</h3>
+            <p data-i18n="aboutP3">
+              Web app at movedeal.app — AI-assisted inventory from room photos, offers, chat after booking, and move-day PDFs.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top:20px">
+          <a class="cta" href="https://movedeal.app/" data-i18n="aboutCta">Visit movedeal.app</a>
+        </p>
+      </section>
+
+      <section class="block" id="channels">
+        <h2 data-i18n="channelsTitle">Social media</h2>
+        <p class="lead" data-i18n="channelsLead">
+          Official MoveDeal channels. Use profile assets from this kit. Bios stay Soft Launch Munich — no Europe-already-live claims.
+        </p>
+        <div class="social-grid">
+          <a class="social-card" href="https://movedeal.app/" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chWeb">Website</strong>
+            <span data-i18n="chWebDesc">Product & marketplace</span>
+          </a>
+          <a class="social-card" href="https://x.com/movedeal_app" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chX">X (Twitter)</strong>
+            <span data-i18n="chXDesc">@movedeal_app</span>
+          </a>
+          <a class="social-card" href="https://www.instagram.com/movedeal_app" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chIg">Instagram</strong>
+            <span data-i18n="chIgDesc">@movedeal_app</span>
+          </a>
+          <a class="social-card" href="https://www.linkedin.com/company/movedeal" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chLi">LinkedIn</strong>
+            <span data-i18n="chLiDesc">Company page</span>
+          </a>
+          <a class="social-card" href="https://www.reddit.com/user/movedeal-admin" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chReddit">Reddit</strong>
+            <span data-i18n="chRedditDesc">u/movedeal-admin</span>
+          </a>
+          <a class="social-card" href="https://github.com/MoveDeal/movedeal-brand" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="chGithub">GitHub</strong>
+            <span data-i18n="chGithubDesc">This brand kit repo</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="block" id="logo">
+        <h2 data-i18n="logoTitle">The mark</h2>
+        <p class="lead" data-i18n="logoLead">
+          A geometric MD monogram in Brand #5B4BFF with a cyan anchor #19D3FF. Filled paths (M + open D + arrow). Shipped as SVG with outlined Inter Bold wordmark — no live type.
+        </p>
+        <div class="split">
+          <div class="panel">
+            <h3 data-i18n="logoStandTitle">What it stands for</h3>
+            <p data-i18n="logoStand">
+              MoveDeal connects people who need to move with verified movers. The monogram is compact for app icons and favicons; the lockup carries the full MoveDeal name.
+            </p>
+          </div>
+          <div class="panel">
+            <h3 data-i18n="logoClearTitle">Clear space</h3>
+            <p data-i18n="logoClear">
+              Keep empty space around the mark equal to the stroke width (~11% of mark height) on all sides. Never crop the cyan accent dot or the diagonal uplift.
             </p>
           </div>
         </div>
@@ -321,7 +418,7 @@
             <div class="stage bg-soft"><img src="svg/movedeal-mark-color.svg" width="88" height="88" alt="" /></div>
             <div class="meta">
               <h3>Color</h3>
-              <p>Default on light UI</p>
+              <p data-i18n="colorDef">Default on light UI</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-mark-color.svg" download>SVG</a>
                 <a class="png" href="png/movedeal-mark-color-512.png" download>PNG 512</a>
@@ -333,7 +430,7 @@
             <div class="stage bg-paper"><img src="svg/movedeal-mark-mono.svg" width="88" height="88" alt="" /></div>
             <div class="meta">
               <h3>Mono</h3>
-              <p>Print / single ink</p>
+              <p data-i18n="monoUse">Print / single ink</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-mark-mono.svg" download>SVG</a>
                 <a class="png" href="png/movedeal-mark-mono-512.png" download>PNG 512</a>
@@ -345,7 +442,7 @@
             <div class="stage bg-night"><img src="svg/movedeal-mark-reversed.svg" width="88" height="88" alt="" /></div>
             <div class="meta">
               <h3>Reversed</h3>
-              <p>Dark backgrounds</p>
+              <p data-i18n="reversedUse">Dark backgrounds</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-mark-reversed.svg" download>SVG</a>
                 <a class="png" href="png/movedeal-mark-reversed-512.png" download>PNG 512</a>
@@ -357,7 +454,7 @@
             <div class="stage bg-ocean"><img src="svg/movedeal-mark-on-ocean.svg" width="88" height="88" alt="" /></div>
             <div class="meta">
               <h3>On Brand</h3>
-              <p>Brand-color fields</p>
+              <p data-i18n="onBrandUse">Brand-color fields</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-mark-on-ocean.svg" download>SVG</a>
                 <a class="png" href="png/movedeal-mark-on-ocean-512.png" download>PNG 512</a>
@@ -377,10 +474,9 @@
       </section>
 
       <section class="block" id="color">
-        <h2>Color</h2>
-        <p class="lead">
-          Brand owns the violet primary. Cyan is the technology accent (dot, motion, focus).
-          Ink <code>#0A0F14</code> is the wordmark on light surfaces; white on dark.
+        <h2 data-i18n="colorTitle">Color</h2>
+        <p class="lead" data-i18n="colorLead">
+          Brand owns the violet primary. Cyan is the technology accent (dot, motion, focus). Ink #0A0F14 is the wordmark on light surfaces; white on dark.
         </p>
         <div class="swatches">
           <div class="swatch"><div class="chip" style="background:var(--brand)"></div><div class="info"><strong>Brand</strong><code>#5B4BFF · primary</code></div></div>
@@ -393,24 +489,21 @@
       </section>
 
       <section class="block" id="type">
-        <h2>Typography</h2>
-        <p class="lead">
-          Product UI and the wordmark use <strong>Inter</strong> (weight 700 for “MoveDeal”).
-          Tracking is native — do not add letter-spacing. Outline the wordmark in SVG files;
-          do not ship live <code>&lt;text&gt;</code>.
+        <h2 data-i18n="typeTitle">Typography</h2>
+        <p class="lead" data-i18n="typeLead">
+          Product UI and the wordmark use Inter (weight 700 for “MoveDeal”). Tracking is native — do not add letter-spacing. Outline the wordmark in SVG files; do not ship live &lt;text&gt;.
         </p>
         <div class="type-sample">
           <p class="big">MoveDeal</p>
           <p class="serif">Inter Bold · 24px wordmark · Ink #0A0F14</p>
-          <p class="body">Compare verified movers, get AI-assisted estimates, and book with transparent pricing across Europe.</p>
+          <p class="body" data-i18n="typeSampleBody">One request → offers from verified movers → you choose. Soft Launch Munich · movedeal.app</p>
         </div>
       </section>
 
       <section class="block" id="lockups">
-        <h2>Lockups</h2>
-        <p class="lead">
-          Wordmark is always “MoveDeal” (one word, capital M and D), Inter Bold, Ink on light / White on dark.
-          Product header rhythm: <strong>32px mark · 8px gap · 24px type</strong> (0.45× cap height).
+        <h2 data-i18n="lockupsTitle">Lockups</h2>
+        <p class="lead" data-i18n="lockupsLead">
+          Wordmark is always “MoveDeal” (one word, capital M and D), Inter Bold, Ink on light / White on dark. Product header rhythm: 32px mark · 8px gap · 24px type (0.45× cap height).
         </p>
         <div class="grid g3">
           <div class="card">
@@ -419,7 +512,7 @@
             </div>
             <div class="meta">
               <h3>Horizontal</h3>
-              <p>Headers, email, docs — matches movedeal.app</p>
+              <p data-i18n="lockHoriz">Headers, email, docs — matches movedeal.app</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-lockup-horizontal-light.svg" download>SVG light</a>
                 <a class="svg" href="svg/movedeal-lockup-horizontal-dark.svg" download>SVG dark</a>
@@ -433,7 +526,7 @@
             </div>
             <div class="meta">
               <h3>Stacked</h3>
-              <p>Splash, square ads</p>
+              <p data-i18n="lockStack">Splash, square ads</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-lockup-stacked-light.svg" download>SVG light</a>
                 <a class="png" href="png/movedeal-lockup-stacked-light-1024.png" download>PNG 1024</a>
@@ -446,7 +539,7 @@
             </div>
             <div class="meta">
               <h3>Wordmark</h3>
-              <p>Footer, text-only uses</p>
+              <p data-i18n="lockWord">Footer, text-only uses</p>
               <div class="dl">
                 <a class="svg" href="svg/movedeal-wordmark-color.svg" download>SVG color</a>
                 <a class="svg" href="svg/movedeal-wordmark-white.svg" download>SVG white</a>
@@ -458,14 +551,14 @@
       </section>
 
       <section class="block" id="social">
-        <h2>Social &amp; profiles</h2>
-        <p class="lead">Square assets for LinkedIn, Instagram, X, Facebook, WhatsApp. Prefer 1024×1024.</p>
+        <h2 data-i18n="assetsTitle">Social &amp; profile assets</h2>
+        <p class="lead" data-i18n="assetsLead">Square assets for LinkedIn, Instagram, X, and WhatsApp. Prefer 1024×1024.</p>
         <div class="grid g4">
           <div class="card">
             <div class="stage" style="padding:0;min-height:0"><img src="png/movedeal-app-icon-512.png" alt="App icon" width="100%" style="display:block" /></div>
             <div class="meta">
               <h3>App icon</h3>
-              <p>Recommended default</p>
+              <p data-i18n="assetApp">Recommended default</p>
               <div class="dl">
                 <a class="main" href="png/movedeal-app-icon-1024.png" download>PNG 1024</a>
                 <a class="png" href="png/movedeal-app-icon-512.png" download>512</a>
@@ -497,33 +590,33 @@
       </section>
 
       <section class="block" id="usage">
-        <h2>Usage</h2>
+        <h2 data-i18n="usageTitle">Usage</h2>
         <div class="split">
           <div>
-            <h3 style="margin:0 0 8px">Do</h3>
+            <h3 style="margin:0 0 8px" data-i18n="doTitle">Do</h3>
             <ul class="rules do">
-              <li>Use color MD mark on Paper / white digital surfaces</li>
-              <li>Use white-mark / dark lockup on dark and Brand fields</li>
-              <li>Keep proportions locked — scale uniformly</li>
-              <li>Use the simplified favicon below 24px (chip letters will not hold)</li>
-              <li>Use Cyan only for accents, motion, and focus — not body text</li>
+              <li data-i18n="do1">Use color MD mark on Paper / white digital surfaces</li>
+              <li data-i18n="do2">Use white-mark / dark lockup on dark and Brand fields</li>
+              <li data-i18n="do3">Keep proportions locked — scale uniformly</li>
+              <li data-i18n="do4">Use the simplified favicon below 24px (chip letters will not hold)</li>
+              <li data-i18n="do5">Use Cyan only for accents, motion, and focus — not body text</li>
             </ul>
           </div>
           <div>
-            <h3 style="margin:0 0 8px">Don’t</h3>
+            <h3 style="margin:0 0 8px" data-i18n="dontTitle">Don’t</h3>
             <ul class="rules dont">
-              <li>Don’t stretch, rotate, or add shadows / gradients to the mark</li>
-              <li>Don’t recolor the monogram outside approved variants</li>
-              <li>Don’t remove the AI chip or leaf from the primary mark</li>
-              <li>Don’t ship live HTML/SVG text for the wordmark — use the outlined files</li>
-              <li>Don’t place low-contrast blue on blue photography without a panel</li>
+              <li data-i18n="dont1">Don’t stretch, rotate, or add shadows / gradients to the mark</li>
+              <li data-i18n="dont2">Don’t recolor the monogram outside approved variants</li>
+              <li data-i18n="dont3">Don’t remove the AI chip or leaf from the primary mark</li>
+              <li data-i18n="dont4">Don’t ship live HTML/SVG text for the wordmark — use the outlined files</li>
+              <li data-i18n="dont5">Don’t place low-contrast blue on blue photography without a panel</li>
             </ul>
           </div>
         </div>
 
-        <h3 style="margin: 32px 0 12px">Minimum sizes</h3>
+        <h3 style="margin: 32px 0 12px" data-i18n="minSizes">Minimum sizes</h3>
         <table>
-          <thead><tr><th>Asset</th><th>Digital</th><th>Print</th></tr></thead>
+          <thead><tr><th data-i18n="thAsset">Asset</th><th data-i18n="thDigital">Digital</th><th data-i18n="thPrint">Print</th></tr></thead>
           <tbody>
             <tr><td>Symbol</td><td>24 px (16 px simplified favicon)</td><td>8 mm</td></tr>
             <tr><td>Horizontal lockup</td><td>120 px wide</td><td>30 mm</td></tr>
@@ -540,10 +633,10 @@
       </section>
 
       <section class="block" id="files">
-        <h2>File naming</h2>
-        <p class="lead">Convention: <code>movedeal-[asset]-[variant].[format]</code></p>
+        <h2 data-i18n="filesTitle">File naming</h2>
+        <p class="lead" data-i18n="filesLead">Convention: movedeal-[asset]-[variant].[format]</p>
         <table>
-          <thead><tr><th>Pattern</th><th>Use</th></tr></thead>
+          <thead><tr><th data-i18n="thPattern">Pattern</th><th data-i18n="thUse">Use</th></tr></thead>
           <tbody>
             <tr><td><code>svg/movedeal-mark-*.svg</code></td><td>Vector masters (fill-based)</td></tr>
             <tr><td><code>svg/movedeal-lockup-horizontal-*.svg</code></td><td>Header lockups (32 / 8 / 24)</td></tr>
@@ -559,16 +652,12 @@
 
     <footer class="site">
       <div class="inner">
-        <span>
-          © MoveDeal · Official brand kit on GitHub Pages —
-          <a href="https://movedeal.github.io/movedeal-brand/">movedeal.github.io/movedeal-brand</a>
-          · Product site
-          <a href="https://movedeal.app/">movedeal.app</a>
-          · Source
-          <a href="https://github.com/MoveDeal/movedeal-brand">github.com/MoveDeal/movedeal-brand</a>
+        <span data-i18n="footerLeft">
+          © MoveDeal · Official brand kit on GitHub Pages · Soft Launch Munich
         </span>
-        <span>Colors match product Tailwind tokens (Brand / Cyan / Ink) · Type is Inter Bold</span>
+        <span data-i18n="footerRight">Colors match product Tailwind tokens (Brand / Cyan / Ink) · Type is Inter Bold</span>
       </div>
     </footer>
+    <script src="i18n.js" defer></script>
   </body>
 </html>
